@@ -41,6 +41,7 @@ def ping():
     return ApiResponse.build(status_code=200, data=response)
 
 
+
 @blueprint.route("/machines", methods=["GET"])
 def get_all_machines():
 
