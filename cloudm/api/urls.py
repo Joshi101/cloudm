@@ -55,6 +55,7 @@ def get_all_machines():
 @schema_validator(ValidateAddMachineSerializer)
 def add_machine(parsed_request):
 
+    CloudManagerService
     return ApiResponse.build(status_code=200, data=parsed_request)
 
 

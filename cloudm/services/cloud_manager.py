@@ -22,3 +22,10 @@ class CloudManagerService:
             machine_list.append(machine_dict)
 
         return machine_list
+
+    @staticmethod
+    def add_machine(machine_params):
+
+        name = machine_params.get("name")
+
+

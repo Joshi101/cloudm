@@ -12,3 +12,6 @@ tox
 gunicorn
 pymongo
 flask-mongoengine
+Faker
+pre-commit
+black
