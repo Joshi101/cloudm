@@ -19,9 +19,5 @@ setup(
         "apispec[yaml]",
         "apispec-webframeworks",
     ],
-    entry_points={
-        "console_scripts": [
-            "cloudm = cloudm.manage:cli"
-        ]
-    },
+    entry_points={"console_scripts": ["cloudm = cloudm.manage:cli"]},
 )

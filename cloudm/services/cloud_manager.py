@@ -1,7 +1,4 @@
-
-
 class CloudManagerService:
-
     def __init__(self):
         pass
 
@@ -27,5 +24,3 @@ class CloudManagerService:
     def add_machine(machine_params):
 
         name = machine_params.get("name")
-
-

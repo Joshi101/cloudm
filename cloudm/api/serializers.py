@@ -18,5 +18,3 @@ class ValidateAddMachineSerializer(Schema):
     name = fields.String()
     cluster_name = fields.String()
     tags = fields.List(fields.String())
-
-

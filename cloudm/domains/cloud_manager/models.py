@@ -4,7 +4,6 @@ from cloudm.extensions import db, pwd_context
 
 
 class CloudMBaseEnum(Enum):
-
     @classmethod
     def choices(cls):
         return tuple((i.name, i.value) for i in cls)
@@ -46,9 +45,7 @@ class Role(db.Document):
     name = db.StringField(required=True, unique=True, max_length=250)
     permissions = db.ListField(db.StringField(choices=RolePermissionChoices.choices()))
 
-    meta = {
-        "collection": "role"
-    }
+    meta = {"collection": "role"}
 
 
 class Cluster(db.Document):
@@ -56,9 +53,7 @@ class Cluster(db.Document):
     name = db.StringField(required=True, unique=True, max_length=250)
     region = db.StringField(choices=RegionChoices.choices())
 
-    meta = {
-        "collection": "cluster"
-    }
+    meta = {"collection": "cluster"}
 
 
 class Machine(db.Document):
@@ -69,13 +64,13 @@ class Machine(db.Document):
     state = db.StringField(required=True, choices=MachineStatusChoices.choices())
     cluster = db.ReferenceField(Cluster)
 
-    meta = {
-        "collection": "machine"
-    }
+    meta = {"collection": "machine"}
 
 
 class Operation(db.Document):
 
     operation_id = db.UUIDField(binary=False)
-    type = db.StringField(required=True, unique=True, choices=MachineStatusChoices.choices())
+    type = db.StringField(
+        required=True, unique=True, choices=MachineStatusChoices.choices()
+    )
     machine = db.ReferenceField(Machine)

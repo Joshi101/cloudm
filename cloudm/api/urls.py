@@ -14,7 +14,6 @@ blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
 
 
 def schema_validator(schema, many=False):
-
     def schema_validator_inner(func):
         def wrapper(*args, **kwargs):
             data = getattr(request, "json")
@@ -29,22 +28,20 @@ def schema_validator(schema, many=False):
 
     return schema_validator_inner
 
+
 @blueprint.route("/ping", methods=["GET"])
 def ping():
-
     response = {
         "msg": "pong",
         "system timestamp": time.time(),
-        "system datetime": datetime.now()
+        "system datetime": datetime.now(),
     }
 
     return ApiResponse.build(status_code=200, data=response)
 
 
-
 @blueprint.route("/machines", methods=["GET"])
 def get_all_machines():
-
     machines = MachineRepository.get_all_machines()
     machine_list = CloudManagerService.create_machine_list_for_response(machines)
     response_schema = MachineSerializer(many=True)
@@ -55,12 +52,5 @@ def get_all_machines():
 @blueprint.route("/machines", methods=["POST"])
 @schema_validator(ValidateAddMachineSerializer)
 def add_machine(parsed_request):
-
     CloudManagerService
     return ApiResponse.build(status_code=200, data=parsed_request)
-
-
-
-
-
-

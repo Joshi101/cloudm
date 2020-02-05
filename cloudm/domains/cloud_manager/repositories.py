@@ -2,7 +2,6 @@ from cloudm.domains.cloud_manager.models import Machine, Cluster
 
 
 class MachineRepository:
-
     @staticmethod
     def get_machine_by_id(machine_id):
 
@@ -35,7 +34,6 @@ class MachineRepository:
 
 
 class ClusterRepository:
-
     @staticmethod
     def add_cluster(**kwargs):
         machine = Cluster(**kwargs).save()
@@ -54,7 +52,3 @@ class ClusterRepository:
     def delete_cluster(cluster):
         cluster.delete()
         return
-
-
-
-
