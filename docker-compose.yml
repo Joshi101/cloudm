@@ -6,7 +6,7 @@ services:
     build: .
     command: gunicorn -b 0.0.0.0:5000 cloudm.wsgi:app
     env_file:
-      - ./.env
+      - ./docker.env
     environment:
       MONGODB_DATABASE: 'cloud_manager'
       MONGODB_HOST: 'mongodb://mongodb'
