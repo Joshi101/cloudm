@@ -6,11 +6,23 @@ services:
     build: .
     command: gunicorn -b 0.0.0.0:5000 cloudm.wsgi:app
     env_file:
-      - ./.flaskenv
+      - ./.env
     environment:
-      - DATABASE_URI=sqlite:////db/cloudm.db
+      MONGODB_DATABASE: 'cloud_manager'
+      MONGODB_HOST: 'mongodb://mongodb'
+      MONGODB_PORT: 27017
     volumes:
       - ./cloudm:/code/cloudm
-      - ./db/:/db/
     ports:
       - "5000:5000"
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    environment:
+      - MONGO_DATA_DIR=/usr/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - /usr/data/cloudm/db:/usr/data/db
+    ports:
+      - 23456:27017
+    command: mongod --logpath=/dev/null # --quiet

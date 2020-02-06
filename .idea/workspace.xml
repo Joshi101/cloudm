@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ceddbe0-7b5b-4048-8720-2d8fabe7d255" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.ebignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx_config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flaskenv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +40,10 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cloudm" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -52,10 +62,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="385" y="188" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580978198841">
+    <state x="385" y="188" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581019733198">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="385" y="188" key="#com.intellij.fileTypes.FileTypeChooser/0.24.1366.744@0.24.1366.744" timestamp="1580978198841" />
+    <state x="385" y="188" key="#com.intellij.fileTypes.FileTypeChooser/0.24.1366.744@0.24.1366.744" timestamp="1581019733198" />
     <state x="421" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580842540964">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -72,9 +82,13 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="331" y="113" width="704" height="538" key="find.popup/0.24.1366.744@0.24.1366.744" timestamp="1580960730894" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580961104730">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580994660858">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.24.1366.744@0.24.1366.744" timestamp="1580961104730" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.24.1366.744@0.24.1366.744" timestamp="1580994660858" />
+    <state x="413" y="297" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1581020472725">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="413" y="297" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.24.1366.744@0.24.1366.744" timestamp="1581020472725" />
   </component>
 </project>

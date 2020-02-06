@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    server_name ~.;
+
+    location /static/ {
+        root /var/www/cloudm/static/;
+    }
+
+    location /media/ {
+        root /var/www/cloudm/;
+    }
+
+    location /v1/ {
+        proxy_pass http://localhost:8000;
+        include /etc/nginx/proxy_params;
+        proxy_redirect off;
+    }
+}
