@@ -26,6 +26,12 @@ class MachineRepository:
         return machine
 
     @staticmethod
+    def edit_machine(machine_obj, **kwargs):
+        machine_obj.update(**kwargs)
+        machine_obj.reload()
+        return machine_obj
+
+    @staticmethod
     def update_tags(machine_obj, tags):
 
         machine_obj.tags.extend(tags)
@@ -34,6 +40,10 @@ class MachineRepository:
 
 
 class ClusterRepository:
+    @staticmethod
+    def get_all_clusters():
+        return Cluster.objects.all()
+
     @staticmethod
     def add_cluster(**kwargs):
         machine = Cluster(**kwargs).save()
@@ -47,6 +57,10 @@ class ClusterRepository:
     @staticmethod
     def get_cluster_by_region(region_name):
         return Cluster.objects.filter(region=region_name).all()
+
+    @staticmethod
+    def get_cluster_by_name(name):
+        return Cluster.objects.filter(name=name).first()
 
     @staticmethod
     def delete_cluster(cluster):

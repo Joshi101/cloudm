@@ -8,8 +8,16 @@ class CloudMBaseEnum(Enum):
     def choices(cls):
         return tuple((i.name, i.value) for i in cls)
 
+    @classmethod
+    def names(cls):
+        return [i.name for i in cls]
 
-class MachineStatusChoices(CloudMBaseEnum):
+    @classmethod
+    def values(cls):
+        return [i.value for i in cls]
+
+
+class MachineStateChoices(CloudMBaseEnum):
 
     RUNNING = "Running"
     STOPPED = "Stopped"
@@ -51,7 +59,9 @@ class Role(db.Document):
 class Cluster(db.Document):
 
     name = db.StringField(required=True, unique=True, max_length=250)
-    region = db.StringField(choices=RegionChoices.choices())
+    region = db.StringField(
+        choices=RegionChoices.choices(), default=RegionChoices.A.name
+    )
 
     meta = {"collection": "cluster"}
 
@@ -59,9 +69,14 @@ class Cluster(db.Document):
 class Machine(db.Document):
 
     name = db.StringField(required=True, unique=True, max_length=250)
-    ip_address = db.StringField(required=True, unique=True)
+    ipv4 = db.StringField(required=True, unique=True)
+    ipv6 = db.StringField(required=True, unique=True)
     tags = db.ListField(db.StringField(), required=False)
-    state = db.StringField(required=True, choices=MachineStatusChoices.choices())
+    state = db.StringField(
+        required=True,
+        choices=MachineStateChoices.choices(),
+        default=MachineStateChoices.RUNNING.name,
+    )
     cluster = db.ReferenceField(Cluster)
 
     meta = {"collection": "machine"}
@@ -71,6 +86,6 @@ class Operation(db.Document):
 
     operation_id = db.UUIDField(binary=False)
     type = db.StringField(
-        required=True, unique=True, choices=MachineStatusChoices.choices()
+        required=True, unique=True, choices=MachineStateChoices.choices()
     )
     machine = db.ReferenceField(Machine)
