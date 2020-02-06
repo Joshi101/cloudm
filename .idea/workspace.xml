@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0ceddbe0-7b5b-4048-8720-2d8fabe7d255" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.ebignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1XM1u3q1WzMswSPpDmPhTPIT3TP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ceddbe0-7b5b-4048-8720-2d8fabe7d255" name="Default Changelist" comment="" />
+      <created>1580841368686</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580841368686</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="385" y="188" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580978198841">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="385" y="188" key="#com.intellij.fileTypes.FileTypeChooser/0.24.1366.744@0.24.1366.744" timestamp="1580978198841" />
+    <state x="421" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580842540964">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="421" y="132" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.24.1366.744@0.24.1366.744" timestamp="1580842540964" />
+    <state x="177" y="24" key="SettingsEditor" timestamp="1580841684434">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="177" y="24" key="SettingsEditor/0.24.1366.744@0.24.1366.744" timestamp="1580841684434" />
+    <state x="294" y="24" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580842420142">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="294" y="24" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.24.1366.744@0.24.1366.744" timestamp="1580842420142" />
+    <state x="331" y="113" width="704" height="538" key="find.popup" timestamp="1580960730894">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="331" y="113" width="704" height="538" key="find.popup/0.24.1366.744@0.24.1366.744" timestamp="1580960730894" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580961104730">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.24.1366.744@0.24.1366.744" timestamp="1580961104730" />
+  </component>
+</project>

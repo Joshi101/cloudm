@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    image: cloudm
+    build: .
+    command: gunicorn -b 0.0.0.0:5000 cloudm.wsgi:app
+    env_file:
+      - ./.flaskenv
+    environment:
+      - DATABASE_URI=sqlite:////db/cloudm.db
+    volumes:
+      - ./cloudm:/code/cloudm
+      - ./db/:/db/
+    ports:
+      - "5000:5000"
