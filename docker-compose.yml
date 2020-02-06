@@ -26,3 +26,4 @@ services:
     ports:
       - 23456:27017
     command: mongod --logpath=/dev/null # --quiet
+
