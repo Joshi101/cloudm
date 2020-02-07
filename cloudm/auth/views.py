@@ -1,18 +1,18 @@
-from flask import request, jsonify, Blueprint, current_app as app
-from flask_jwt_extended import (
-    create_access_token,
-    create_refresh_token,
-    jwt_required,
-    jwt_refresh_token_required,
-    get_jwt_identity,
-    get_raw_jwt,
-)
-
-from cloudm.extensions import pwd_context, jwt, apispec
+# from flask import request, jsonify, Blueprint, current_app as app
+# from flask_jwt_extended import (
+#     create_access_token,
+#     create_refresh_token,
+#     jwt_required,
+#     jwt_refresh_token_required,
+#     get_jwt_identity,
+#     get_raw_jwt,
+# )
+#
+# from cloudm.extensions import pwd_context, jwt, apispec
 # from cloudm.auth.helpers import revoke_token, is_token_revoked, add_token_to_database
 
 
-blueprint = Blueprint("auth", __name__, url_prefix="/auth")
+# blueprint = Blueprint("auth", __name__, url_prefix="/auth")
 
 
 # @blueprint.route("/login", methods=["POST"])

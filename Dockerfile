@@ -3,7 +3,6 @@ FROM python:3.7-alpine
 RUN mkdir /code
 RUN apk add --no-cache gcc \
                        libc-dev \
-                       libffi6 \
                        libffi-dev  \
         && rm -rf /var/cache/apk/*
 WORKDIR /code
