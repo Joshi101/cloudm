@@ -4,6 +4,12 @@ from marshmallow.validate import OneOf
 from cloudm.domains.cloud_manager.models import MachineStateChoices
 
 
+class OperationSerializer(Schema):
+
+    type = fields.String()
+    performed_on = fields.DateTime(format="%Y-%m-%d %H:%M:%S")
+
+
 class MachineSerializer(Schema):
 
     name = fields.String()
@@ -15,6 +21,7 @@ class MachineSerializer(Schema):
     region = fields.String()
     state = fields.String()
     tags = fields.List(fields.String)
+    operations = fields.Nested(OperationSerializer, many=True)
 
 
 class ValidateAddMachineSerializer(Schema):
@@ -27,7 +34,7 @@ class ValidateAddMachineSerializer(Schema):
 class ValidateEditMachineSerializer(Schema):
 
     name = fields.String()
-    tag = fields.String()
+    tags = fields.List(fields.String())
     state_code = fields.String(validate=OneOf(MachineStateChoices.names()))
 
 
@@ -40,6 +47,12 @@ class ClusterSerializer(Schema):
 
 
 class ValidateAddClusterSerializer(Schema):
+
+    name = fields.String()
+    region_code = fields.String()
+
+
+class ValidateEditClusterSerializer(Schema):
 
     name = fields.String()
     region_code = fields.String()

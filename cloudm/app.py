@@ -1,8 +1,11 @@
 from flask import Flask
 
-from cloudm import auth, api
+from cloudm.api.api_docs import init_docs
+from cloudm.api.api_response import ApiResponse
+from cloudm.exception import APIException, exception_handler
 from cloudm.extensions import db, jwt, apispec
 from cloudm.api.urls import blueprint as cloudm_bp
+from flask_cors import CORS
 
 
 def create_app(testing=False, cli=False):
@@ -15,8 +18,10 @@ def create_app(testing=False, cli=False):
         app.config["TESTING"] = True
 
     configure_extensions(app, cli)
-    configure_apispec(app)
     register_blueprints(app)
+    configure_apispec(app)
+    CORS(app, resources={r"*": {"origins": "*"}})
+    register_errorhandlers(app)
 
     return app
 
@@ -31,21 +36,7 @@ def configure_extensions(app, cli):
 def configure_apispec(app):
     """Configure APISpec for swagger support
     """
-    apispec.init_app(app, security=[{"jwt": []}])
-    apispec.spec.components.security_scheme(
-        "jwt", {"type": "http", "scheme": "bearer", "bearerFormat": "JWT"}
-    )
-    apispec.spec.components.schema(
-        "PaginatedResult",
-        {
-            "properties": {
-                "total": {"type": "integer"},
-                "pages": {"type": "integer"},
-                "next": {"type": "string"},
-                "prev": {"type": "string"},
-            }
-        },
-    )
+    init_docs(app)
 
 
 def register_blueprints(app):
@@ -54,3 +45,9 @@ def register_blueprints(app):
     # app.register_blueprint(auth.views.blueprint)
     # app.register_blueprint(api.views.blueprint)
     app.register_blueprint(cloudm_bp)
+
+
+def register_errorhandlers(app):
+    """Register error handlers."""
+
+    app.register_error_handler(APIException, exception_handler)

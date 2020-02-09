@@ -11,6 +11,5 @@ RUN pip install -r requirements.txt
 RUN pip install -e .
 
 COPY cloudm cloudm/
-COPY migrations migrations/
 
 EXPOSE 5000

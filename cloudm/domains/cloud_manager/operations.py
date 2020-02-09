@@ -1,7 +1,10 @@
 from faker import Faker
 from string import ascii_letters
 
-from cloudm.domains.cloud_manager.repositories import MachineRepository
+from cloudm.domains.cloud_manager.repositories import (
+    MachineRepository,
+    ClusterRepository,
+)
 
 
 def generate_random_name():
@@ -84,11 +87,26 @@ class CloudManagerOperation:
         edit_dict = dict()
         if "name" in machine_params:
             edit_dict["name"] = machine_params["name"]
-        if "tag" in machine_params:
-            updated_tags = machine_obj.tags
-            if machine_params["tag"] not in updated_tags:
-                updated_tags.append(machine_params["tag"])
-            edit_dict["tags"] = updated_tags
+        if "tags" in machine_params:
+            edit_dict["tags"] = machine_params["tags"]
         machine_obj = MachineRepository.edit_machine(machine_obj, **edit_dict)
 
         return machine_obj
+
+    def edit_cluster(self, cluster_id, cluster_params):
+
+        cluster_obj = ClusterRepository.get_cluster_by_id(cluster_id)
+        edit_dict = dict()
+        if "name" in cluster_params:
+            edit_dict["name"] = cluster_params["name"]
+        if "region_code" in cluster_params:
+            edit_dict["region"] = cluster_params["region"]
+        machine_obj = ClusterRepository.edit_clister(cluster_obj, **edit_dict)
+
+        return machine_obj
+
+    def delete_cluster(self, cluster_id):
+
+        cluster_obj = ClusterRepository.get_cluster_by_id(cluster_id)
+        ClusterRepository.delete_cluster(cluster_obj)
+        return

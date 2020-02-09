@@ -2,8 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ceddbe0-7b5b-4048-8720-2d8fabe7d255" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cloudm/api/api_docs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudm/api/serializers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudm/docs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudm/exception.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/api/serializers/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/domains/cloud_manager/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/domains/cloud_manager/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/domains/cloud_manager/operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/domains/cloud_manager/operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/domains/cloud_manager/repositories.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/domains/cloud_manager/repositories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/services/cloud_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/services/cloud_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudm/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloudm/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/3c403aee5d08_initial_migration.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +58,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cloudm/api/serializers" />
       <recent name="$PROJECT_DIR$/cloudm" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -57,6 +77,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="362" y="24" key="#app" timestamp="1581266551599">
+      <screen x="0" y="24" width="1366" height="744" />
+    </state>
+    <state x="362" y="24" key="#app/0.24.1366.744@0.24.1366.744" timestamp="1581266551599" />
     <state x="385" y="188" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581019733198">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
@@ -73,14 +97,14 @@
       <screen x="0" y="24" width="1366" height="744" />
     </state>
     <state x="294" y="24" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.24.1366.744@0.24.1366.744" timestamp="1580842420142" />
-    <state x="331" y="113" width="704" height="538" key="find.popup" timestamp="1580960730894">
+    <state x="331" y="113" width="863" height="606" key="find.popup" timestamp="1581273085657">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="331" y="113" width="704" height="538" key="find.popup/0.24.1366.744@0.24.1366.744" timestamp="1580960730894" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580994660858">
+    <state x="331" y="113" width="863" height="606" key="find.popup/0.24.1366.744@0.24.1366.744" timestamp="1581273085657" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1581273175242">
       <screen x="0" y="24" width="1366" height="744" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.24.1366.744@0.24.1366.744" timestamp="1580994660858" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.24.1366.744@0.24.1366.744" timestamp="1581273175242" />
     <state x="413" y="297" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1581048122473">
       <screen x="0" y="24" width="1366" height="744" />
     </state>

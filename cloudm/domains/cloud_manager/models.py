@@ -1,3 +1,4 @@
+import datetime
 from enum import Enum
 
 from cloudm.extensions import db, pwd_context
@@ -21,7 +22,7 @@ class MachineStateChoices(CloudMBaseEnum):
 
     RUNNING = "Running"
     STOPPED = "Stopped"
-    DELETED = "Terminated"
+    TERMINATED = "Terminated"
 
 
 class OperationTypeChoices(CloudMBaseEnum):
@@ -29,13 +30,7 @@ class OperationTypeChoices(CloudMBaseEnum):
     START = "Start"
     STOP = "Stop"
     REBOOT = "Reboot"
-
-
-class RolePermissionChoices(CloudMBaseEnum):
-
-    edit_cluster = "Edit Cluster"
-    edit_machine = "Edit Machine"
-    operate_machine = "Operate Machine"
+    TERMINATE = "Terminate"
 
 
 class RegionChoices(CloudMBaseEnum):
@@ -46,16 +41,6 @@ class RegionChoices(CloudMBaseEnum):
     D = "D"
 
 
-class Role(db.Document):
-    """Basic user model
-    """
-
-    name = db.StringField(required=True, unique=True, max_length=250)
-    permissions = db.ListField(db.StringField(choices=RolePermissionChoices.choices()))
-
-    meta = {"collection": "role"}
-
-
 class Cluster(db.Document):
 
     name = db.StringField(required=True, unique=True, max_length=250)
@@ -64,6 +49,7 @@ class Cluster(db.Document):
     )
 
     meta = {"collection": "cluster"}
+    created_at = db.DateTimeField(required=True, default=datetime.datetime.now())
 
 
 class Machine(db.Document):
@@ -80,12 +66,11 @@ class Machine(db.Document):
     cluster = db.ReferenceField(Cluster)
 
     meta = {"collection": "machine"}
+    created_at = db.DateTimeField(required=True, default=datetime.datetime.now())
 
 
 class Operation(db.Document):
 
-    operation_id = db.UUIDField(binary=False)
-    type = db.StringField(
-        required=True, unique=True, choices=MachineStateChoices.choices()
-    )
+    type = db.StringField(required=True, choices=OperationTypeChoices.choices())
     machine = db.ReferenceField(Machine)
+    performed_on = db.DateTimeField(required=True, default=datetime.datetime.now())

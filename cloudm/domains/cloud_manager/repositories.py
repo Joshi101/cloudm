@@ -1,4 +1,4 @@
-from cloudm.domains.cloud_manager.models import Machine, Cluster
+from cloudm.domains.cloud_manager.models import Machine, Cluster, Operation
 
 
 class MachineRepository:
@@ -8,9 +8,15 @@ class MachineRepository:
         return Machine.objects.filter(id=machine_id).first()
 
     @staticmethod
-    def get_all_machines():
+    def get_all_machines(tags=None, cluster_name=None):
 
-        return Machine.objects.all()
+        qs = Machine.objects.filter()
+        if tags:
+            qs.filter(tags__in=tags)
+        if cluster_name:
+            qs.filter(cluster__name__iexact=cluster_name)
+
+        return qs.all()
 
     @staticmethod
     def get_machine_by_name(machine_name):
@@ -38,8 +44,17 @@ class MachineRepository:
         machine_obj.save()
         return machine_obj
 
+    @staticmethod
+    def delete_machine(machine):
+        machine.delete()
+        return
+
 
 class ClusterRepository:
+    @staticmethod
+    def get_cluster_by_id(cluster_id):
+        return Cluster.objects.filter(id=cluster_id).first()
+
     @staticmethod
     def get_all_clusters():
         return Cluster.objects.all()
@@ -66,3 +81,21 @@ class ClusterRepository:
     def delete_cluster(cluster):
         cluster.delete()
         return
+
+    @staticmethod
+    def edit_clister(cluster_obj, **kwargs):
+        cluster_obj.update(**kwargs)
+        cluster_obj.reload()
+        return cluster_obj
+
+
+class OperationRepository:
+    @staticmethod
+    def get_all_machine_operations():
+
+        return Operation.objects.all()
+
+    @staticmethod
+    def add_operation(**kwargs):
+        operation = Operation(**kwargs).save()
+        return operation
