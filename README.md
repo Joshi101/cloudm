@@ -23,6 +23,12 @@ The APIs are well documanted using swagger and can be found at http://ec2-13-233
 
 > curl -X GET http://ec2-13-233-164-183.ap-south-1.compute.amazonaws.com/api/v1/site-constants?constant=region
 
+##### get code fot machine state and action
+
+>curl -X GET http://ec2-13-233-164-183.ap-south-1.compute.amazonaws.com/api/v1/site-constants?constant=machine_state
+
+>curl -X GET http://ec2-13-233-164-183.ap-south-1.compute.amazonaws.com/api/v1/site-constants?constant=machine_operation
+
 ##### get all clusters
 
 > curl -X GET http://ec2-13-233-164-183.ap-south-1.compute.amazonaws.com/api/v1/clusters
