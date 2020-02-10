@@ -100,7 +100,7 @@ class CloudManagerOperation:
         if "name" in cluster_params:
             edit_dict["name"] = cluster_params["name"]
         if "region_code" in cluster_params:
-            edit_dict["region"] = cluster_params["region"]
+            edit_dict["region"] = cluster_params["region_code"]
         machine_obj = ClusterRepository.edit_clister(cluster_obj, **edit_dict)
 
         return machine_obj

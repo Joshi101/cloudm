@@ -10,8 +10,8 @@ server {
         root /var/www/cloudm/;
     }
 
-    location /v1/ {
-        proxy_pass http://localhost:8000;
+    location / {
+        proxy_pass 0.0.0.0:5000;
         include /etc/nginx/proxy_params;
         proxy_redirect off;
     }

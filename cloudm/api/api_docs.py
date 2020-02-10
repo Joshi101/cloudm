@@ -32,7 +32,7 @@ info:
         altText: logo
     termsOfService: 'http://swagger.io/terms/'
 servers:
-- url: http://localhost:5000
+- url: http://ec2-13-233-164-183.ap-south-1.compute.amazonaws.com
   description: Test server
 
 """

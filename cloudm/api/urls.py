@@ -505,6 +505,7 @@ def get_constants():
                     type: string
                     enum:
                        - machine_state
+                       - machine_operation
                        - region
         responses:
             200:

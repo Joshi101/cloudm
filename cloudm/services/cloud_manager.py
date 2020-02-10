@@ -124,7 +124,7 @@ class CloudManagerService:
                 _ = OperationRepository.add_operation(
                     type=OperationTypeChoices.START.name, machine=machine
                 )
-                MachineRepository.edit_machine(
+                machine = MachineRepository.edit_machine(
                     machine, state=MachineStateChoices.RUNNING.name
                 )
             else:
@@ -135,7 +135,7 @@ class CloudManagerService:
             _ = OperationRepository.add_operation(
                 type=OperationTypeChoices.REBOOT.name, machine=machine
             )
-            MachineRepository.edit_machine(
+            machine = MachineRepository.edit_machine(
                 machine, state=MachineStateChoices.RUNNING.name
             )
         if action == OperationTypeChoices.TERMINATE.name:
@@ -144,7 +144,7 @@ class CloudManagerService:
                 _ = OperationRepository.add_operation(
                     type=OperationTypeChoices.TERMINATE.name, machine=machine
                 )
-                MachineRepository.edit_machine(
+                machine = MachineRepository.edit_machine(
                     machine, state=MachineStateChoices.TERMINATED.name
                 )
             else:
@@ -156,7 +156,7 @@ class CloudManagerService:
                 _ = OperationRepository.add_operation(
                     type=OperationTypeChoices.STOP.name, machine=machine
                 )
-                MachineRepository.edit_machine(
+                machine = MachineRepository.edit_machine(
                     machine, state=MachineStateChoices.STOPPED.name
                 )
             else:

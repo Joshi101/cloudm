@@ -33,9 +33,8 @@ class ValidateAddMachineSerializer(Schema):
 
 class ValidateEditMachineSerializer(Schema):
 
-    name = fields.String()
-    tags = fields.List(fields.String())
-    state_code = fields.String(validate=OneOf(MachineStateChoices.names()))
+    name = fields.String(required=False)
+    tags = fields.List(fields.String(), required=False)
 
 
 class ClusterSerializer(Schema):
