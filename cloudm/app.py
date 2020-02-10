@@ -1,9 +1,8 @@
 from flask import Flask
 
 from cloudm.api.api_docs import init_docs
-from cloudm.api.api_response import ApiResponse
 from cloudm.exception import APIException, exception_handler
-from cloudm.extensions import db, jwt, apispec
+from cloudm.extensions import db, jwt
 from cloudm.api.urls import blueprint as cloudm_bp
 from flask_cors import CORS
 

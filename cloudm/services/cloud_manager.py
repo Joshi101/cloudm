@@ -1,4 +1,3 @@
-from cloudm.commons.apispec import APISpecExt
 from cloudm.domains.cloud_manager.models import (
     RegionChoices,
     OperationTypeChoices,
